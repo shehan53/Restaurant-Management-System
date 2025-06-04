@@ -281,7 +281,7 @@ namespace RestaurantManagementSystem
             else
             {
                 MessageBox.Show("You can't add discount more than the Net Total", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                txtDiscount.Text = "0";
             }
         }
 
