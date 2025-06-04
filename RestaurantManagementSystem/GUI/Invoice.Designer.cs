@@ -35,6 +35,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.table = new System.Windows.Forms.DataGridView();
+            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtItemCode = new System.Windows.Forms.TextBox();
@@ -79,14 +84,10 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.panelSalesControl = new System.Windows.Forms.Panel();
+            this.brnRefreshFields = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.table)).BeginInit();
             this.panelSalesControl.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -155,9 +156,36 @@
             this.Amount});
             this.table.Location = new System.Drawing.Point(18, 157);
             this.table.Name = "table";
+            this.table.ReadOnly = true;
             this.table.RowTemplate.Height = 24;
+            this.table.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.table.Size = new System.Drawing.Size(1039, 298);
             this.table.TabIndex = 7;
+            // 
+            // Item_Code
+            // 
+            this.Item_Code.HeaderText = "Item Code";
+            this.Item_Code.Name = "Item_Code";
+            // 
+            // Item_Name
+            // 
+            this.Item_Name.HeaderText = "Item Name";
+            this.Item_Name.Name = "Item_Name";
+            // 
+            // Unit_Price
+            // 
+            this.Unit_Price.HeaderText = "Unit Price";
+            this.Unit_Price.Name = "Unit_Price";
+            // 
+            // Qty
+            // 
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
             // 
             // label2
             // 
@@ -185,6 +213,7 @@
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.Size = new System.Drawing.Size(73, 33);
             this.txtItemCode.TabIndex = 10;
+            this.txtItemCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemCode_KeyPress);
             this.txtItemCode.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtItemCode_KeyUp);
             // 
             // txtItemName
@@ -195,6 +224,7 @@
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(175, 33);
             this.txtItemName.TabIndex = 11;
+            this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             this.txtItemName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtItemName_KeyUp);
             // 
             // txtQty
@@ -206,6 +236,7 @@
             this.txtQty.Size = new System.Drawing.Size(73, 33);
             this.txtQty.TabIndex = 12;
             this.txtQty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQty_KeyDown);
+            this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_KeyPress);
             // 
             // txtUnitPrice
             // 
@@ -215,6 +246,7 @@
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(73, 33);
             this.txtUnitPrice.TabIndex = 13;
+            this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
             // 
             // txtPID
             // 
@@ -224,6 +256,7 @@
             this.txtPID.Name = "txtPID";
             this.txtPID.Size = new System.Drawing.Size(73, 33);
             this.txtPID.TabIndex = 14;
+            this.txtPID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPID_KeyPress);
             // 
             // listProducts
             // 
@@ -235,7 +268,7 @@
             this.listProducts.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listProducts.Location = new System.Drawing.Point(117, 136);
             this.listProducts.Name = "listProducts";
-            this.listProducts.Size = new System.Drawing.Size(517, 157);
+            this.listProducts.Size = new System.Drawing.Size(512, 157);
             this.listProducts.TabIndex = 15;
             this.listProducts.UseCompatibleStateImageBehavior = false;
             this.listProducts.View = System.Windows.Forms.View.Details;
@@ -352,7 +385,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(18, 655);
+            this.label19.Location = new System.Drawing.Point(18, 657);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(75, 21);
             this.label19.TabIndex = 27;
@@ -411,6 +444,7 @@
             this.btnRemove.TabIndex = 33;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnSave
             // 
@@ -425,33 +459,38 @@
             this.btnSave.TabIndex = 34;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(1012, 100);
+            this.btnSearch.Location = new System.Drawing.Point(1012, 110);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(45, 40);
             this.btnSearch.TabIndex = 35;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtInvoiceSearch
             // 
             this.txtInvoiceSearch.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInvoiceSearch.Location = new System.Drawing.Point(905, 103);
+            this.txtInvoiceSearch.Location = new System.Drawing.Point(905, 111);
             this.txtInvoiceSearch.Multiline = true;
             this.txtInvoiceSearch.Name = "txtInvoiceSearch";
-            this.txtInvoiceSearch.Size = new System.Drawing.Size(101, 33);
+            this.txtInvoiceSearch.Size = new System.Drawing.Size(101, 36);
             this.txtInvoiceSearch.TabIndex = 36;
+            this.txtInvoiceSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInvoiceSearch_KeyPress);
             // 
             // txtTotal
             // 
-            this.txtTotal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(145, 566);
             this.txtTotal.Multiline = true;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(153, 30);
             this.txtTotal.TabIndex = 37;
+            this.txtTotal.Text = "0";
             // 
             // txtTpno
             // 
@@ -461,6 +500,7 @@
             this.txtTpno.Name = "txtTpno";
             this.txtTpno.Size = new System.Drawing.Size(246, 30);
             this.txtTpno.TabIndex = 38;
+            this.txtTpno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTpno_KeyPress);
             // 
             // txtName
             // 
@@ -470,42 +510,56 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(249, 30);
             this.txtName.TabIndex = 39;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // txtCard
             // 
+            this.txtCard.Enabled = false;
             this.txtCard.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCard.Location = new System.Drawing.Point(574, 566);
             this.txtCard.Multiline = true;
             this.txtCard.Name = "txtCard";
             this.txtCard.Size = new System.Drawing.Size(112, 30);
             this.txtCard.TabIndex = 40;
+            this.txtCard.Text = "0";
+            this.txtCard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCard_KeyPress);
+            this.txtCard.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCard_KeyUp);
             // 
             // txtNetTotal
             // 
-            this.txtNetTotal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNetTotal.Location = new System.Drawing.Point(145, 646);
+            this.txtNetTotal.Enabled = false;
+            this.txtNetTotal.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNetTotal.Location = new System.Drawing.Point(145, 654);
             this.txtNetTotal.Multiline = true;
             this.txtNetTotal.Name = "txtNetTotal";
             this.txtNetTotal.Size = new System.Drawing.Size(153, 30);
             this.txtNetTotal.TabIndex = 41;
+            this.txtNetTotal.Text = "0";
             // 
             // txtDiscount
             // 
             this.txtDiscount.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(145, 606);
+            this.txtDiscount.Location = new System.Drawing.Point(145, 611);
             this.txtDiscount.Multiline = true;
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(153, 30);
             this.txtDiscount.TabIndex = 42;
+            this.txtDiscount.Text = "0";
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
+            this.txtDiscount.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDiscount_KeyUp);
             // 
             // txtCash
             // 
+            this.txtCash.Enabled = false;
             this.txtCash.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCash.Location = new System.Drawing.Point(405, 566);
             this.txtCash.Multiline = true;
             this.txtCash.Name = "txtCash";
             this.txtCash.Size = new System.Drawing.Size(112, 30);
             this.txtCash.TabIndex = 43;
+            this.txtCash.Text = "0";
+            this.txtCash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCash_KeyPress);
+            this.txtCash.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCash_KeyUp);
             // 
             // label16
             // 
@@ -521,7 +575,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(104, 655);
+            this.label17.Location = new System.Drawing.Point(104, 657);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(35, 21);
             this.label17.TabIndex = 45;
@@ -569,6 +623,7 @@
             // 
             // panelSalesControl
             // 
+            this.panelSalesControl.Controls.Add(this.brnRefreshFields);
             this.panelSalesControl.Controls.Add(this.btnRefresh);
             this.panelSalesControl.Controls.Add(this.panel2);
             this.panelSalesControl.Controls.Add(this.label27);
@@ -622,6 +677,26 @@
             this.panelSalesControl.TabIndex = 50;
             this.panelSalesControl.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelSalesControl_MouseClick);
             // 
+            // brnRefreshFields
+            // 
+            this.brnRefreshFields.Image = ((System.Drawing.Image)(resources.GetObject("brnRefreshFields.Image")));
+            this.brnRefreshFields.Location = new System.Drawing.Point(621, 102);
+            this.brnRefreshFields.Name = "brnRefreshFields";
+            this.brnRefreshFields.Size = new System.Drawing.Size(51, 37);
+            this.brnRefreshFields.TabIndex = 52;
+            this.brnRefreshFields.UseVisualStyleBackColor = true;
+            this.brnRefreshFields.Click += new System.EventHandler(this.brnRefreshFields_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(1012, 57);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(44, 37);
+            this.btnRefresh.TabIndex = 51;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
@@ -642,41 +717,6 @@
             this.label28.Size = new System.Drawing.Size(127, 24);
             this.label28.TabIndex = 0;
             this.label28.Text = "Sales Control";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.Location = new System.Drawing.Point(1017, 58);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(39, 32);
-            this.btnRefresh.TabIndex = 51;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // Item_Code
-            // 
-            this.Item_Code.HeaderText = "Item Code";
-            this.Item_Code.Name = "Item_Code";
-            // 
-            // Item_Name
-            // 
-            this.Item_Name.HeaderText = "Item Name";
-            this.Item_Name.Name = "Item_Name";
-            // 
-            // Unit_Price
-            // 
-            this.Unit_Price.HeaderText = "Unit Price";
-            this.Unit_Price.Name = "Unit_Price";
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
             // 
             // Invoice
             // 
@@ -756,6 +796,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.Button brnRefreshFields;
     }
 }
 
