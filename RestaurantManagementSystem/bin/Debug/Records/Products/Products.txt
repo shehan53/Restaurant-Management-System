@@ -1,0 +1,2 @@
+﻿ID|Name|Price|Qty
+1|Kottu|300|23 

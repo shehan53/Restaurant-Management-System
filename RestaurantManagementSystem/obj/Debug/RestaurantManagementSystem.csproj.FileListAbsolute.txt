@@ -1,0 +1,9 @@
+c:\users\shehan\documents\visual studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\bin\Debug\RestaurantManagementSystem.exe.config
+c:\users\shehan\documents\visual studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\bin\Debug\RestaurantManagementSystem.exe
+c:\users\shehan\documents\visual studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\bin\Debug\RestaurantManagementSystem.pdb
+c:\users\shehan\documents\visual studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.csprojResolveAssemblyReference.cache
+c:\users\shehan\documents\visual studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.Invoice.resources
+c:\users\shehan\documents\visual studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.Properties.Resources.resources
+c:\users\shehan\documents\visual studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.csproj.GenerateResource.Cache
+c:\users\shehan\documents\visual studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.exe
+c:\users\shehan\documents\visual studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Debug\RestaurantManagementSystem.pdb
