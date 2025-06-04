@@ -1,2 +1,4 @@
 ﻿ID|Name|Price|Qty
-1|Kottu|300|23 
+1|Kottu|300|23
+2|Fried Rice|500|24
+3|Fried Chicken|250|12 

@@ -82,9 +82,10 @@
     <Folder Include="Records\Employees\" />
     <Folder Include="Records\Finance\" />
     <Folder Include="Records\Invoices\" />
+    <Folder Include="Records\Products\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Records\Products\Products.txt" />
+    <Content Include="bin\Debug\Records\Products\Products.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
