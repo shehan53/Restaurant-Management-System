@@ -51,7 +51,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblTotQty = new System.Windows.Forms.Label();
@@ -166,26 +165,31 @@
             // 
             this.Item_Code.HeaderText = "Item Code";
             this.Item_Code.Name = "Item_Code";
+            this.Item_Code.ReadOnly = true;
             // 
             // Item_Name
             // 
             this.Item_Name.HeaderText = "Item Name";
             this.Item_Name.Name = "Item_Name";
+            this.Item_Name.ReadOnly = true;
             // 
             // Unit_Price
             // 
             this.Unit_Price.HeaderText = "Unit Price";
             this.Unit_Price.Name = "Unit_Price";
+            this.Unit_Price.ReadOnly = true;
             // 
             // Qty
             // 
             this.Qty.HeaderText = "Qty";
             this.Qty.Name = "Qty";
+            this.Qty.ReadOnly = true;
             // 
             // Amount
             // 
             this.Amount.HeaderText = "Amount";
             this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
             // 
             // label2
             // 
@@ -263,12 +267,11 @@
             this.listProducts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader3});
             this.listProducts.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listProducts.Location = new System.Drawing.Point(117, 136);
             this.listProducts.Name = "listProducts";
-            this.listProducts.Size = new System.Drawing.Size(512, 157);
+            this.listProducts.Size = new System.Drawing.Size(463, 157);
             this.listProducts.TabIndex = 15;
             this.listProducts.UseCompatibleStateImageBehavior = false;
             this.listProducts.View = System.Windows.Forms.View.Details;
@@ -288,11 +291,6 @@
             // 
             this.columnHeader3.Text = "Unit Price";
             this.columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Qty";
-            this.columnHeader4.Width = 40;
             // 
             // label8
             // 
@@ -623,6 +621,7 @@
             // 
             // panelSalesControl
             // 
+            this.panelSalesControl.BackColor = System.Drawing.Color.White;
             this.panelSalesControl.Controls.Add(this.brnRefreshFields);
             this.panelSalesControl.Controls.Add(this.btnRefresh);
             this.panelSalesControl.Controls.Add(this.panel2);
@@ -724,9 +723,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 753);
             this.Controls.Add(this.panelSalesControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Invoice";
-            this.Text = "Sales Control";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Avenro Restaurant Management System";
             ((System.ComponentModel.ISupportInitialize)(this.table)).EndInit();
             this.panelSalesControl.ResumeLayout(false);
             this.panelSalesControl.PerformLayout();
@@ -789,7 +790,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item_Code;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item_Name;

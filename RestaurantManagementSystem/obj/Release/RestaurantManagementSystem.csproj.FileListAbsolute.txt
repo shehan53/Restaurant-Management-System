@@ -1,0 +1,8 @@
+C:\Users\Shehan\Documents\Visual Studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\bin\Release\RestaurantManagementSystem.exe.config
+C:\Users\Shehan\Documents\Visual Studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\bin\Release\RestaurantManagementSystem.exe
+C:\Users\Shehan\Documents\Visual Studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\bin\Release\RestaurantManagementSystem.pdb
+C:\Users\Shehan\Documents\Visual Studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Release\RestaurantManagementSystem.Invoice.resources
+C:\Users\Shehan\Documents\Visual Studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Release\RestaurantManagementSystem.Properties.Resources.resources
+C:\Users\Shehan\Documents\Visual Studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Release\RestaurantManagementSystem.csproj.GenerateResource.Cache
+C:\Users\Shehan\Documents\Visual Studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Release\RestaurantManagementSystem.exe
+C:\Users\Shehan\Documents\Visual Studio 2012\Projects\RestaurantManagementSystem\RestaurantManagementSystem\obj\Release\RestaurantManagementSystem.pdb

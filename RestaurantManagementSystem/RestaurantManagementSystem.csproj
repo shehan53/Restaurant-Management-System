@@ -44,16 +44,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ValidateFields.cs" />
+    <Compile Include="GUI\Employee_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Employee_Management.Designer.cs">
+      <DependentUpon>Employee_Management.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Invoice.Designer.cs">
       <DependentUpon>Invoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Employee_Management.resx">
+      <DependentUpon>Employee_Management.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Invoice.resx">
       <DependentUpon>Invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

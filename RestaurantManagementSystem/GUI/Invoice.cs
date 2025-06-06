@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using RestaurantManagementSystem.Classes;
 namespace RestaurantManagementSystem
 {
     public partial class Invoice : Form
@@ -27,6 +27,7 @@ namespace RestaurantManagementSystem
         private void SearchProductByID(string itemcode)
         {
             string filePath = @"Records\Products\Products.txt";
+           
 
             /* if (!File.Exists(filePath))
              {
@@ -44,15 +45,15 @@ namespace RestaurantManagementSystem
             {
                 var parts = line.Split('|');
 
-                if (parts.Length == 4 && parts[0] == itemcode)
+                if (parts.Length == 3 && parts[0] == itemcode)
                 {
 
                     var item = new ListViewItem(parts[0]); // ID
                     item.SubItems.Add(parts[1]); // Name
                     item.SubItems.Add(parts[2]); // Price
-                    item.SubItems.Add(parts[3]); // Qty
+                    
                     listProducts.Items.Add(item);
-                    Console.WriteLine(parts[0] + parts[1] + parts[2] + (parts[3]));
+                    Console.WriteLine(parts[0] + parts[1] + parts[2]);
                     return;
                 }
 
@@ -86,7 +87,6 @@ namespace RestaurantManagementSystem
                 ListViewItem selectedItem = listProducts.SelectedItems[0];
                 txtItemName.Text = selectedItem.SubItems[1].Text; // Name
                 txtUnitPrice.Text = selectedItem.SubItems[2].Text;    // Price
-                txtQty.Text = selectedItem.SubItems[3].Text.Trim(); // Qty
                 txtPID.Text = selectedItem.SubItems[0].Text;  // PID
                 txtItemCode.Text = "";
                 txtQty.Focus();
@@ -138,6 +138,7 @@ namespace RestaurantManagementSystem
         private void SearchProductByName(string name)
         {
             string filePath = @"Records\Products\Products.txt";
+            
 
             listProducts.Items.Clear();
 
@@ -150,7 +151,7 @@ namespace RestaurantManagementSystem
                 {
                     var parts = line.Split('|');
 
-                    if (parts.Length == 4)
+                    if (parts.Length == 3)
                     {
                         string productName = parts[1];
 
@@ -160,7 +161,6 @@ namespace RestaurantManagementSystem
                             var item = new ListViewItem(parts[0]); // ID
                             item.SubItems.Add(parts[1]);           // Name
                             item.SubItems.Add(parts[2]);           // Price
-                            item.SubItems.Add(parts[3]);           // Qty
                             listProducts.Items.Add(item);
                         }
                     }
@@ -221,7 +221,8 @@ namespace RestaurantManagementSystem
             }
             else
             {
-                MessageBox.Show("Please select a row to remove");
+           
+                MessageBox.Show("Please select a row to remove", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCash.Enabled = false;
                 txtCard.Enabled = false;
             }
@@ -393,6 +394,8 @@ namespace RestaurantManagementSystem
             {
 
                 string directoryPath = @"Records\Invoices\";
+                
+
 
     // Ensure directory exists
     if (!Directory.Exists(directoryPath))
@@ -563,155 +566,58 @@ foreach (DataGridViewRow row in table.Rows)
 
         private void txtItemCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow digits and control keys (e.g., backspace)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // block the key
-            }
+            ValidateFields.allowDigitsOnly(e);
         }
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow digits and control keys (e.g., backspace)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // block the key
-            }
+            ValidateFields.allowDigitsOnly(e);
         }
 
         private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow digits and control keys (e.g., backspace)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // block the key
-            }
+            ValidateFields.allowDigitsOnly(e);
         }
 
         private void txtPID_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow digits and control keys (e.g., backspace)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // block the key
-            }
+            ValidateFields.allowDigitsOnly(e);
         }
 
         private void txtInvoiceSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow digits and control keys (e.g., backspace)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // block the key
-            }
+            ValidateFields.allowDigitsOnly(e);
         }
 
         private void txtTpno_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow digits and control keys (e.g., backspace)
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true; // block the key
-            }
+            ValidateFields.allowDigitsOnly(e);
         }
 
         private void txtItemName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow letters, space, and control keys
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
-            {
-                e.Handled = true;
-            }
+            ValidateFields.allowLettersOnly(e);
         }
 
         private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = sender as TextBox;
-
-            // Allow digits, one dot, and control keys
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-
-            // Only one decimal point allowed
-            if (e.KeyChar == '.' && txt.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-
-            // Allow only 2 decimal places
-            if (char.IsDigit(e.KeyChar) && txt.Text.Contains("."))
-            {
-                string[] parts = txt.Text.Split('.');
-                if (parts.Length == 2 && parts[1].Length >= 2 && txt.SelectionStart > txt.Text.IndexOf("."))
-                {
-                    e.Handled = true;
-                }
-            }
+            ValidateFields.numbersWithDecimals(sender, e);
         }
 
         private void txtCard_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = sender as TextBox;
-
-            // Allow digits, one dot, and control keys
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-
-            // Only one decimal point allowed
-            if (e.KeyChar == '.' && txt.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-
-            // Allow only 2 decimal places
-            if (char.IsDigit(e.KeyChar) && txt.Text.Contains("."))
-            {
-                string[] parts = txt.Text.Split('.');
-                if (parts.Length == 2 && parts[1].Length >= 2 && txt.SelectionStart > txt.Text.IndexOf("."))
-                {
-                    e.Handled = true;
-                }
-            }
+            ValidateFields.numbersWithDecimals(sender,e);
         }
 
         private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextBox txt = sender as TextBox;
-
-            // Allow digits, one dot, and control keys
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-
-            // Only one decimal point allowed
-            if (e.KeyChar == '.' && txt.Text.Contains("."))
-            {
-                e.Handled = true;
-            }
-
-            // Allow only 2 decimal places
-            if (char.IsDigit(e.KeyChar) && txt.Text.Contains("."))
-            {
-                string[] parts = txt.Text.Split('.');
-                if (parts.Length == 2 && parts[1].Length >= 2 && txt.SelectionStart > txt.Text.IndexOf("."))
-                {
-                    e.Handled = true;
-                }
-            }
+            ValidateFields.numbersWithDecimals(sender, e);
         }
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow letters, space, and control keys
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && e.KeyChar != ' ')
-            {
-                e.Handled = true;
-            }
+            ValidateFields.allowLettersOnly(e);
+
         } 
       
 
