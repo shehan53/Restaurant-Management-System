@@ -417,8 +417,9 @@ namespace RestaurantManagementSystem
 
     // Prepare CSV content using StringBuilder
     StringBuilder sb = new StringBuilder();
-
+    string today = DateTime.Now.ToString("yyyy-MM-dd");
     // First lines with invoice info (can be separate or part of CSV)
+    sb.AppendLine("Date-" + today);
     sb.AppendLine("Customer Name-" + txtName.Text);
     sb.AppendLine("Customer TP No-" + txtTpno.Text);
     sb.AppendLine("Invoice No-" + invoiceNo);

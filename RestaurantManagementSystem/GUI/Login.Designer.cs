@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,79 @@
             this.panel1.Size = new System.Drawing.Size(761, 604);
             this.panel1.TabIndex = 0;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnLogin.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(240, 515);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(336, 51);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(240, 453);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(336, 28);
+            this.txtPassword.TabIndex = 6;
+            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(240, 407);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(336, 28);
+            this.txtUsername.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Location = new System.Drawing.Point(84, 451);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(209, 31);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Password";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(85, 405);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(210, 31);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Username";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(327, 300);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 52);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Login";
+            // 
+            // label2
+            // 
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(300, 137);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(201, 161);
+            this.label2.TabIndex = 1;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MidnightBlue;
@@ -80,80 +153,6 @@
             this.label1.Size = new System.Drawing.Size(549, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Avenro Restaurant Management System";
-            // 
-            // label2
-            // 
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(300, 137);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(201, 161);
-            this.label2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(327, 300);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 53);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Login";
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = ((System.Drawing.Image)(resources.GetObject("label4.Image")));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(85, 405);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(210, 31);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Username";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(85, 451);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(209, 31);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Password";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(240, 405);
-            this.txtUsername.Multiline = true;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(336, 31);
-            this.txtUsername.TabIndex = 5;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(240, 451);
-            this.txtPassword.Multiline = true;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(336, 31);
-            this.txtPassword.TabIndex = 6;
-            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnLogin.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(240, 515);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(336, 51);
-            this.btnLogin.TabIndex = 7;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Login
             // 

@@ -45,6 +45,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ValidateFields.cs" />
+    <Compile Include="GUI\Finance_Summary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Finance_Summary.designer.cs">
+      <DependentUpon>Finance_Summary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Product_Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Product_Management.designer.cs">
+      <DependentUpon>Product_Management.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Employee_Management.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +83,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Finance_Summary.resx">
+      <DependentUpon>Finance_Summary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Product_Management.resx">
+      <DependentUpon>Product_Management.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Employee_Management.resx">
       <DependentUpon>Employee_Management.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,16 +104,16 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>

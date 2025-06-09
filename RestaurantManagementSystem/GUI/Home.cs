@@ -23,5 +23,11 @@ namespace RestaurantManagementSystem.GUI
             invoice.Show();
            
         }
+
+        private void btnProductManagement_Click(object sender, EventArgs e)
+        {
+            Product_Management pm = new Product_Management();
+            pm.Show();
+        }
     }
 }

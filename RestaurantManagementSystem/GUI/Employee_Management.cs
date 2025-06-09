@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using RestaurantManagementSystem.Classes;
 namespace RestaurantManagementSystem.GUI
 {
     public partial class Employee_Management : Form
@@ -325,6 +325,22 @@ namespace RestaurantManagementSystem.GUI
         private void txtEmpCode_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtEmpid.Text = "";
+            ValidateFields.allowDigitsOnly(e);
+        }
+
+        private void txtEmpid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateFields.allowDigitsOnly(e);
+        }
+
+        private void txtEmpName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateFields.allowLettersOnly(e);
+        }
+
+        private void txtRole_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateFields.allowLettersOnly(e);
         }
 
 

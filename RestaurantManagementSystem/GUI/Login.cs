@@ -14,7 +14,9 @@ namespace RestaurantManagementSystem.GUI
     {
         public Login()
         {
+            
             InitializeComponent();
+           
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
