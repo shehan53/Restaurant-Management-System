@@ -283,6 +283,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Employee_Management";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Avenro Restaurant Management System";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

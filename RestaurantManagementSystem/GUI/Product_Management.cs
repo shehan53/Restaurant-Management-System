@@ -48,6 +48,7 @@ namespace RestaurantManagementSystem
             txtItemName.Text = "";
             txtPrice.Text = "";
             txtProductID.Text = "";
+            txtItemCode.Enabled = true;
         }
 
         private void saveProductDetails()
@@ -269,7 +270,7 @@ namespace RestaurantManagementSystem
                 MessageBox.Show("Product file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            txtItemCode.Enabled = false;
             string searchCode = txtProductID.Text.Trim();
             var lines = File.ReadAllLines(filePath);
 
@@ -308,7 +309,7 @@ namespace RestaurantManagementSystem
 
                 if (row.Cells[0].Value != null)
                     txtItemCode.Text = row.Cells[0].Value.ToString();
-
+                    txtItemCode.Enabled = false;
                 if (row.Cells[1].Value != null)
                     txtItemName.Text = row.Cells[1].Value.ToString();
 

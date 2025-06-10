@@ -155,8 +155,8 @@ namespace RestaurantManagementSystem
                     {
                         string productName = parts[1];
 
-                        // Case-insensitive "starts with" match (like 'ab%')
-                        if (productName.StartsWith(name, StringComparison.OrdinalIgnoreCase))
+                        // Case-insensitive "starts with" match (like '%ab%')
+                        if (productName.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0)
                         {
                             var item = new ListViewItem(parts[0]); // ID
                             item.SubItems.Add(parts[1]);           // Name

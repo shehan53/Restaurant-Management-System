@@ -162,6 +162,7 @@ namespace RestaurantManagementSystem.GUI
             dtpFrom.Value = DateTime.Today;
             dtpTo.Value = DateTime.Today;
             refresh();
+            loadFinanceSummary();
         }
     }
 }

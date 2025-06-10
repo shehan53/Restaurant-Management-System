@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace RestaurantManagementSystem.GUI
 {
+
     public partial class Login : Form
     {
+      public static bool hasPrivilege = false;
         public Login()
         {
             
@@ -29,6 +31,7 @@ namespace RestaurantManagementSystem.GUI
         {
             if (txtUsername.Text == "admin" && txtPassword.Text == "1111")
             {
+                hasPrivilege = true;
                 Home home = new Home();
                 home.Show();
                 this.Hide();

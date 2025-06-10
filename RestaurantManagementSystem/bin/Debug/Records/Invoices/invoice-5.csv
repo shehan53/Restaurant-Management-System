@@ -1,0 +1,10 @@
+Date-2025-06-10
+Customer Name-shehan
+Customer TP No-1234
+Invoice No-5
+Total Amount-700
+Total Net Amount-500
+Discount-200
+
+ItemCode | ProductName | UnitPrice | Quantity | Amount
+1 | Kottu | 350.00 | 2 | 700.00

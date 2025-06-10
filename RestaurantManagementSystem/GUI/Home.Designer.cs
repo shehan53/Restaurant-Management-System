@@ -124,6 +124,7 @@
             this.btnFinanceSummary.TabIndex = 5;
             this.btnFinanceSummary.Text = "Finance Summary";
             this.btnFinanceSummary.UseVisualStyleBackColor = false;
+            this.btnFinanceSummary.Click += new System.EventHandler(this.btnFinanceSummary_Click);
             // 
             // btnEmployeeManagement
             // 
@@ -136,6 +137,7 @@
             this.btnEmployeeManagement.TabIndex = 4;
             this.btnEmployeeManagement.Text = "Employee Management";
             this.btnEmployeeManagement.UseVisualStyleBackColor = false;
+            this.btnEmployeeManagement.Click += new System.EventHandler(this.btnEmployeeManagement_Click);
             // 
             // btnProductManagement
             // 

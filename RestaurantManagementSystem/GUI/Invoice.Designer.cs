@@ -269,6 +269,7 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listProducts.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listProducts.FullRowSelect = true;
             this.listProducts.Location = new System.Drawing.Point(117, 136);
             this.listProducts.Name = "listProducts";
             this.listProducts.Size = new System.Drawing.Size(463, 157);

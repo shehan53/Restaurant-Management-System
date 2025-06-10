@@ -15,6 +15,9 @@ namespace RestaurantManagementSystem.GUI
         public Home()
         {
             InitializeComponent();
+            if(!Login.hasPrivilege){
+                btnFinanceSummary.Visible = false;
+            }
         }
 
         private void btnSalesControl_Click(object sender, EventArgs e)
@@ -28,6 +31,18 @@ namespace RestaurantManagementSystem.GUI
         {
             Product_Management pm = new Product_Management();
             pm.Show();
+        }
+
+        private void btnEmployeeManagement_Click(object sender, EventArgs e)
+        {
+            Employee_Management em = new Employee_Management();
+            em.Show();
+        }
+
+        private void btnFinanceSummary_Click(object sender, EventArgs e)
+        {
+            Finance_Summary fs = new Finance_Summary();
+            fs.Show();
         }
     }
 }

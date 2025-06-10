@@ -85,6 +85,7 @@ namespace RestaurantManagementSystem.GUI
             txtEmpName.Clear();
             txtRole.Clear();
             txtEmpid.Clear();
+            txtEmpCode.Enabled = true;
            
         }
         private void loadEmployeeData()
@@ -142,7 +143,7 @@ namespace RestaurantManagementSystem.GUI
 
                 if (row.Cells[0].Value != null)
                     txtEmpCode.Text = row.Cells[0].Value.ToString();
-
+                        txtEmpCode.Enabled = false;
                 if (row.Cells[1].Value != null)
                     txtEmpName.Text = row.Cells[1].Value.ToString();
 
@@ -273,7 +274,7 @@ namespace RestaurantManagementSystem.GUI
                 MessageBox.Show("Employee file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            txtEmpCode.Enabled = false;
             string searchCode = txtEmpid.Text.Trim();
             var lines = File.ReadAllLines(filePath);
 

@@ -41,12 +41,12 @@
             this.txtTotalCount = new System.Windows.Forms.TextBox();
             this.lblFood = new System.Windows.Forms.Label();
             this.dgvFood = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnReset = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -164,14 +164,30 @@
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvFood.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFood.Location = new System.Drawing.Point(38, 327);
             this.dgvFood.Name = "dgvFood";
+            this.dgvFood.ReadOnly = true;
+            this.dgvFood.RowHeadersVisible = false;
             this.dgvFood.RowTemplate.Height = 24;
+            this.dgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFood.Size = new System.Drawing.Size(430, 184);
             this.dgvFood.TabIndex = 11;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Product Name";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 50F;
+            this.Column2.HeaderText = "Qty";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // panel1
             // 
@@ -191,6 +207,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(524, 537);
             this.panel1.TabIndex = 12;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.Location = new System.Drawing.Point(461, 59);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(51, 36);
+            this.btnReset.TabIndex = 13;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // panel2
             // 
@@ -212,27 +238,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Finance Summary";
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Product Name";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 50F;
-            this.Column2.HeaderText = "Qty";
-            this.Column2.Name = "Column2";
-            // 
-            // btnReset
-            // 
-            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
-            this.btnReset.Location = new System.Drawing.Point(461, 59);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(51, 36);
-            this.btnReset.TabIndex = 13;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // Finance_Summary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,6 +247,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Finance_Summary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Avenro Restaurant Management System";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).EndInit();
             this.panel1.ResumeLayout(false);

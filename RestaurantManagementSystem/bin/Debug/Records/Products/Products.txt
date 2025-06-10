@@ -1,4 +1,4 @@
 ID|Name|Price
 1|Kottu|350
-2|Egg Fried Rice|500
-3|Fried Chicken|250
+2|Egg Fried Rice|600
+3|Fried Chicken|300
